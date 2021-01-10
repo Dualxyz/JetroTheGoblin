@@ -7,17 +7,30 @@ public class playerController : MonoBehaviour{
     // Start is called before the first frame update
     //Example for rosman
 
+    public int FloatNumber = 0; 
     public Interactable focus;
     public LayerMask movementMask; //Which objects we want to filter
     Camera cam; //Reference to the camera 
     PlayerMotor motor;
 
     void SetFocus(Interactable newFocus){
+        if (newFocus != focus){
+
+            if(focus != null)
+                focus.OnDefocused();
+
+            focus = newFocus;
+            motor.FollowTarget(newFocus);
+        }
+
         focus = newFocus;   //Coordinates of the target that we want to move to
+        newFocus.OnFocused(transform);
         motor.FollowTarget(newFocus);   //Moving to the target
     }
 
     void RemoveFocus(){
+        if (focus != null)
+             focus.OnDefocused();
         focus = null;   //Reset the coordinates
         motor.StopFollowingTarget();    //Stop following the target
     }
