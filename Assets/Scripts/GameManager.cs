@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.B)){
-            showhidePanel();
+            showhideInventory();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)){
@@ -28,23 +28,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void closeAllInterfaces(){
+        InventoryAll.gameObject.SetActive(false);
+        InventoryDisplay = false;
+    }
     public void showhideMenu(){
          if(MenuDisplay == false){
             EscMenu.gameObject.SetActive(true);
             print("You have opened the Inventory.");
             MenuDisplay = true;
+            closeAllInterfaces();
         } else {
             EscMenu.gameObject.SetActive(false);
             print("You have closed the Inventory.");
             MenuDisplay = false;
         }
     }
-    public void showhidePanel(){
-        if(InventoryDisplay == false){
+    public void showhideInventory(){
+        if(InventoryDisplay == false && MenuDisplay == false){
             InventoryAll.gameObject.SetActive(true);
             print("You have opened the Inventory.");
             InventoryDisplay = true;
-        } else {
+        } else if (InventoryDisplay == true && MenuDisplay == false){
             InventoryAll.gameObject.SetActive(false);
             print("You have closed the Inventory.");
             InventoryDisplay = false;
