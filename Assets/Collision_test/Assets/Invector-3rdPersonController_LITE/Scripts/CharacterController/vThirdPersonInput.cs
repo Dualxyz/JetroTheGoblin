@@ -141,6 +141,7 @@ namespace Invector.vCharacterController
         /// </summary>
         protected virtual void JumpInput()
         {
+            //bool doubleJump = false;
             if (Input.GetKeyDown(jumpInput) && JumpConditions())
                 cc.Jump();
         }
