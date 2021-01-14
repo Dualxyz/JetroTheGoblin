@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     bool isFocus = false;
     Transform player;
     bool hasInteracted = false;
-
+//XD
     public virtual void Interact(){//Virtual method 
         //This method is meant to be overwritten
         Debug.Log("Interacting with " + transform.name);
