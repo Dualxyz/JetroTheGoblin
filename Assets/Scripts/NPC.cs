@@ -21,8 +21,8 @@ public class NPC : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.transform.position, NPCC.transform.position);
-        if (distance < 2 && Input.GetKeyDown(KeyCode.Z)){
-            print("I have interacted with an object");
+        if (distance < 3 && Input.GetKeyDown(KeyCode.Z)){
+            print("I have interacted with an NPC: " + NPCC.gameObject.name);
         }
     }
 }
