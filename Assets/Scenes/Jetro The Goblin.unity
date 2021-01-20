@@ -4981,7 +4981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2763343482147233961, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: PlayerJetro
       objectReference: {fileID: 0}
     - target: {fileID: 2763343482147233961, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: m_TagString
