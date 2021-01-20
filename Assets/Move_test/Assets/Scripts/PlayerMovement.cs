@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 		gravity = -20000f;
 		print("gravity set to: "+ gravity);
 	}
-
+//comment
 	public void resetGravityBoost(){
 		gravity = -9.81f;
 		print("gravity reset to: "+ gravity);
