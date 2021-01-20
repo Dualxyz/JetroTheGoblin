@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController1 : MonoBehaviour
 {
     public Transform target;    //Target on which the camera is being focused on
     public Vector3 offset;      //The distance between the player and the camera
