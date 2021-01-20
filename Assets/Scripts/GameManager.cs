@@ -11,20 +11,6 @@ public class GameManager : MonoBehaviour
     public bool MenuDisplay = false;
     public bool InventoryDisplay = false; //Idk why it displays an error here?:D
     // Start is called before the first frame update
-    // public PlayerMovement Player;
-    // public bool PlayerGravity = false;
-
-    // public void SetGravity(){
-    //     if(PlayerGravity == false){
-    //         PlayerGravity = true;
-    //         Player.GravityBoost();
-    //     } else {
-    //        PlayerGravity = false;
-    //        Player.resetGravityBoost();
-    //     }
-    // }
-
-    
     void Start()
     {
         Cursor.visible = false;
@@ -39,10 +25,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)){
             showhideMenu();
         }
-
-        // if (Input.GetKeyDown(KeyCode.G)){
-        //     SetGravity();
-        // }
     }
 
     public void closeAllInterfaces(){
