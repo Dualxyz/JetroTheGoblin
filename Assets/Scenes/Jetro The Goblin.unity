@@ -3105,6 +3105,7 @@ RectTransform:
   m_AnchoredPosition: {x: 268, y: -494}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!1 &777615820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3137,8 @@ Transform:
   m_Father: {fileID: 827525869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 2e63164... Gravity Control (Hotkey G)
 --- !u!1001 &819058050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3761,8 +3764,29 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8680563831228336905, guid: 87bc3eb9ada0e6244825499d9149a53d, type: 3}
   m_PrefabInstance: {fileID: 819058050}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1003114208
 GameObject:
+=======
+  m_GameObject: {fileID: 994411611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e609fa98ede15b4e9ca474d1947538e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  walkSpeed: 5
+  runSpeed: 7
+  isGrounded: 1
+  groundCheckDistance: 0.2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  gravity: -9.81
+  jumpHeight: 1.5
+--- !u!143 &994411614
+CharacterController:
+>>>>>>> parent of 2e63164... Gravity Control (Hotkey G)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6163,6 +6187,7 @@ PrefabInstance:
 --- !u!1 &1563900116
 GameObject:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6282,6 +6307,70 @@ Transform:
   m_Father: {fileID: 421127610}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233961, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233961, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233962, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: walkSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+>>>>>>> parent of 2e63164... Gravity Control (Hotkey G)
 --- !u!1001 &1680716483
 PrefabInstance:
   m_ObjectHideFlags: 0
