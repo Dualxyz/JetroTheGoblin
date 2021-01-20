@@ -1378,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &323450267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2690,6 +2690,27 @@ RectTransform:
   m_AnchoredPosition: {x: 268, y: -494}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &757856521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2763343482147233961, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+  m_PrefabInstance: {fileID: 1633334554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &757856526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757856521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e57dca527f61b84aa2bdf2e2e632a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryAll: {fileID: 1207170842}
+  EscMenu: {fileID: 1541944494}
+  MenuDisplay: 0
+  InventoryDisplay: 0
 --- !u!1001 &819058050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3221,6 +3242,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
+  PlayerGravity: 0
   jumpHeight: 1.5
 --- !u!143 &994411614
 CharacterController:
@@ -4923,7 +4945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7
+      value: 3.836
       objectReference: {fileID: 0}
     - target: {fileID: 2763343482147233941, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4968,6 +4990,14 @@ PrefabInstance:
     - target: {fileID: 2763343482147233962, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: walkSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233962, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: isGrounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343482147233962, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: groundCheckDistance
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}

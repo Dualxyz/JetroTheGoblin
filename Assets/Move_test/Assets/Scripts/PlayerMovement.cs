@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private bool isGrounded;
 	[SerializeField] private float groundCheckDistance;
 	[SerializeField] private LayerMask groundMask;
-	[SerializeField] private float gravity;
+	[SerializeField] public float gravity;
+	public bool PlayerGravity = false;
 	
 	[SerializeField] private float jumpHeight;
 	
@@ -37,15 +38,41 @@ public class PlayerMovement : MonoBehaviour
 		{
 			StartCoroutine(Attack());
 		}
+
+		if (Input.GetKeyDown(KeyCode.G)){
+            SetGravity();
+        }
+		
+	}
+
+	 public void SetGravity(){
+        if(PlayerGravity == false){
+        	PlayerGravity = true;
+           	GravityBoost();
+        } else {
+           PlayerGravity = false;
+           resetGravityBoost();
+        }
+    }
+
+	public void GravityBoost(){
+		gravity = -20000f;
+		print("gravity set to: "+ gravity);
+	}
+
+	public void resetGravityBoost(){
+		gravity = -9.81f;
+		print("gravity reset to: "+ gravity);
 	}
 	
 	private void Move()
 	{
-		isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+		//isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+		isGrounded = true;
 		
 		if(isGrounded && velocity.y < 0)
 		{
-			velocity.y = -5f;
+			velocity.y = -2f;
 		}
 		
 		float moveZ = Input.GetAxis("Vertical");
