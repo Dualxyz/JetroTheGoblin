@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private bool isGrounded;
 	[SerializeField] private float groundCheckDistance;
 	[SerializeField] private LayerMask groundMask;
-	[SerializeField] public float gravity;
+	[SerializeField] private float gravity;
 	public bool PlayerGravity = false;
 	
 	[SerializeField] private float jumpHeight;
@@ -69,10 +69,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		//isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
 		isGrounded = true;
-		
 		if(isGrounded && velocity.y < 0)
 		{
-			velocity.y = -2f;
+			velocity.y = -5f;
 		}
 		
 		float moveZ = Input.GetAxis("Vertical");
