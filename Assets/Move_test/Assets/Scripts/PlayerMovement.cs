@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 			
 			moveDirection *= moveSpeed;
 			
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKey(KeyCode.Space))
 			{
 				Jump();
 			}
