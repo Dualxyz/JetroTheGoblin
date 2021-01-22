@@ -687,6 +687,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 76214481}
     m_Modifications:
     - target: {fileID: 8680563831228336902, guid: 87bc3eb9ada0e6244825499d9149a53d, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680563831228336902, guid: 87bc3eb9ada0e6244825499d9149a53d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 323450267}
@@ -1378,7 +1382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &323450267
 MonoBehaviour:
   m_ObjectHideFlags: 0

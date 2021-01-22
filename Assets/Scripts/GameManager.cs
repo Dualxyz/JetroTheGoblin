@@ -52,13 +52,13 @@ public class GameManager : MonoBehaviour
     public void showhideMenu(){
          if(MenuDisplay == false){
             EscMenu.gameObject.SetActive(true);
-            print("You have opened the Inventory.");
+            print("You have opened the ESC Menu.");
             MenuDisplay = true;
             closeAllInterfaces();
             Cursor.visible = true;
         } else {
             EscMenu.gameObject.SetActive(false);
-            print("You have closed the Inventory.");
+            print("You have closed the ESC Menu.");
             MenuDisplay = false;
             Cursor.visible = false;
         }
