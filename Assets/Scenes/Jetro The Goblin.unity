@@ -1749,6 +1749,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516756328}
   m_CullTransparentMesh: 0
+--- !u!1 &517208114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2763343483116497669, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+  m_PrefabInstance: {fileID: 1633334554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &517208116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517208114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845278a0170cb2e4d832ea68b963ed1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 250
+--- !u!20 &517208119 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2763343483116497671, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+  m_PrefabInstance: {fileID: 1633334554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &523764148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2812,6 +2835,21 @@ MonoBehaviour:
   EscMenu: {fileID: 1541944494}
   MenuDisplay: 0
   InventoryDisplay: 0
+--- !u!114 &757856527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757856521}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3355529f6bb3064eb240f205502088c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 517208119}
+  target: {fileID: 1271445475}
+  distanceToTarget: 5
 --- !u!1001 &819058050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4390,6 +4428,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1271445475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2437546071806561569, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+  m_PrefabInstance: {fileID: 1633334554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297314381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4425428723088313499, guid: fc9b148a2950aaf4cba8422632222c5d, type: 3}
@@ -5099,6 +5142,10 @@ PrefabInstance:
     - target: {fileID: 2763343482147233962, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
       propertyPath: groundCheckDistance
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763343483116497665, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4671ad1e43a73634b81e32fbe38cc459, type: 3}
