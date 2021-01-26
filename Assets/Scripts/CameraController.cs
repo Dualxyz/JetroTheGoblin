@@ -24,8 +24,9 @@ public class CameraController1 : MonoBehaviour
     void Update(){
         currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;  //- because it's inverted q.q
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom); //Put the current zoom between the minZoom and maxZoom
-
+        yawInput += Input.GetAxis("Vertical") * yawSpeed * Time.deltaTime;
         yawInput += Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
+        
     }
 
     // Update is called once per frame
