@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,20 +9,21 @@ public class GameManager : MonoBehaviour
     public GameObject InventoryAll;
     public GameObject EscMenu;
     public bool MenuDisplay = false;
-    public bool InventoryDisplay = false; //Idk why it displays an error here?:D
+    [SerializeField] private bool InventoryDisplay;
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
     void Update(){
+        //Cursor.visible = true;
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.B)){
             showhideInventory();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)){
+        if (Input.GetKeyDown(KeyCode.R)){
             showhideMenu();
         }
     }
@@ -38,25 +39,42 @@ public class GameManager : MonoBehaviour
             MenuDisplay = true;
             closeAllInterfaces();
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         } else {
             EscMenu.gameObject.SetActive(false);
             print("You have closed the Inventory.");
             MenuDisplay = false;
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void showhideInventory(){
         if(InventoryDisplay == false && MenuDisplay == false){
-            InventoryAll.gameObject.SetActive(true);
-            print("You have opened the Inventory.");
-            InventoryDisplay = true;
-            Cursor.visible = true;  //Make the cursor visible
+            openInventory();
         } else if (InventoryDisplay == true && MenuDisplay == false){
-            InventoryAll.gameObject.SetActive(false);
-            print("You have closed the Inventory.");
-            InventoryDisplay = false;
-            Cursor.visible = false;
+            closeInventory();
+            setInventoryDisplay(false);
         }
+    }
+
+    public void closeInventory(){
+        InventoryAll.gameObject.SetActive(false);
+        print("You have closed the Inventory.");
+        FindObjectOfType<GameManager>().InventoryDisplay = false; //closeInventory() is used as a button function so I need to access it in order to change the InventoryDisplay
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void openInventory(){            
+        InventoryAll.gameObject.SetActive(true);
+        print("You have opened the Inventory.");
+        setInventoryDisplay(true);
+        Cursor.visible = true;  //Make the cursor visible
+        Cursor.lockState = CursorLockMode.None; 
+    }
+
+    public bool setInventoryDisplay(bool x){
+        return InventoryDisplay = x;
     }
 
     public void backToMainMenu(){
