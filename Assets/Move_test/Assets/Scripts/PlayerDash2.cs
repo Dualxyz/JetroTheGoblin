@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDash : MonoBehaviour
+public class PlayerDash2 : MonoBehaviour
 {
     [SerializeField] private float dashSpeed; //speed of the dash
     [SerializeField] private float dashTime; //duration of the dash

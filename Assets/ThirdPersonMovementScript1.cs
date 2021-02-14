@@ -8,13 +8,16 @@ public class ThirdPersonMovementScript1 : MonoBehaviour
     //VARIABLES
     [SerializeField] private float moveSpeed;
 
-    private Vector3 moveDirection; // keep track of movement while in Ground
+    public Vector3 moveDirection; // keep track of movement while in Ground
     private Vector3 velocity; // keep track of movement while jumping
 
     [SerializeField] private bool isGrounded; // keep track if player is in Ground
     [SerializeField] private float groundCheckDistance; //??
     [SerializeField] private LayerMask groundMask; //??
     [SerializeField] private float gravity; // value of gravity
+
+    [SerializeField] private float jumpHeight;
+    private int jumpsStack;
 
     //REFERENCES
     private CharacterController controller;  //motor that drtives our player
@@ -27,15 +30,18 @@ public class ThirdPersonMovementScript1 : MonoBehaviour
     private void Start()
     {
         this.controller = GetComponent<CharacterController>();
+        isGrounded = true;
+        jumpsStack = 0;
     }
 
     private void Update()
     {
         Move();
-
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Manages the movement of the player
+    /// </summary>
     private void Move()
     {
         GravityCheck();
@@ -51,13 +57,40 @@ public class ThirdPersonMovementScript1 : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * -Vector3.forward;
-            controller.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
-
-            ApplyGravityToPlayer();
+            moveDirection = moveDir.normalized * moveSpeed;
+            Move(moveDirection);
         }
 
+        //Jump&DoubleJump
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsStack < 2)
+        {
+            jumpsStack++;
+            Jump();
+        }
+
+        ApplyGravityToPlayer();
     }
 
+    /// <summary>
+    /// Basic jumping mechanics
+    /// </summary>
+    private void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity); // can be replaced by other
+    }
+
+    /// <summary>
+    /// Move the player position based on a Vector 
+    /// </summary>
+    /// <param name="movement">Vector used to place the player in another location</param>
+    public void Move(Vector3 movement)
+    {
+        this.controller.Move(movement * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// Desables gravity if player if in ground
+    /// </summary>
     private void GravityCheck()
     {
         this.isGrounded = isInGround(transform.position);
@@ -66,6 +99,7 @@ public class ThirdPersonMovementScript1 : MonoBehaviour
         if (this.isGrounded && this.velocity.y < 0)
         {
             this.velocity.y = -2f;
+            jumpsStack = 0; //resets jump counter if player comback to ground
         }
     }
 
