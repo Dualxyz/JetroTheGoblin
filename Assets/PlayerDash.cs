@@ -39,6 +39,7 @@ public class PlayerDash : MonoBehaviour
         {
             playerMovScript.moveDirection *= dashSpeed;
             playerMovScript.Move(playerMovScript.moveDirection);
+            print(playerMovScript.moveDirection);
 
             yield return null;
         }
